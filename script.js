@@ -5,7 +5,7 @@ function addRecommendation() {
   if (recommendation.value != null && recommendation.value.trim() != "") {
     console.log("New recommendation added");
     //Call showPopup here
-
+    showPopup(true);
     // Create a new 'recommendation' element and set it's value to the user's message
     var element = document.createElement("div");
     element.setAttribute("class","recommendation");
@@ -20,8 +20,13 @@ function addRecommendation() {
 
 function showPopup(bool) {
   if (bool) {
-    document.getElementById('popup').style.visibility = 'visible'
+    document.getElementById('popup').style.visibility = 'visible';
+
+    // Hide the popup after a few seconds
+    setTimeout(function() {
+      showPopup(false);
+    }, 1000); // Popup will be visible for 1 seconds    
   } else {
-    document.getElementById('popup').style.visibility = 'hidden'
+    document.getElementById('popup').style.visibility = 'hidden';
   }
 }
