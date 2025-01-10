@@ -3,29 +3,17 @@ body {
   font-family: 'Trebuchet MS', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  color: #000; /* Default text color */
+  color: #000;
 }
 
 /* Navigation Bar */
 #home {
   background-color: #7600bc;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-}
-
-.topmenu {
-  color: lightgray;
-  text-decoration: none;
-  margin: 10px;
-}
-
-.topmenu:hover {
-  color: white;
-  font-weight: bold;
-  text-decoration: underline;
 }
 
 .profile_name {
@@ -45,12 +33,36 @@ body {
   margin-right: 10px;
 }
 
-/* Titles */
-h2 {
-  font-size: 2rem;
-  color: #7600bc;
-  text-align: center;
-  margin: 20px 0;
+.topdiv {
+  display: flex;
+  gap: 10px;
+}
+
+.topmenu {
+  color: lightgray;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.topmenu:hover {
+  color: white;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  #home {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .topdiv {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .topmenu {
+    margin: 5px;
+  }
 }
 
 /* About Me Section */
@@ -65,13 +77,14 @@ h2 {
   font-size: 1.8rem;
   text-align: center;
   color: #7600bc;
+  margin-top: 10px;
 }
 
 #about-me p {
   font-size: 1rem;
   color: rgb(128, 128, 128);
   text-align: center;
-  max-width: 600px;
+  max-width: 90%;
 }
 
 /* Skills Section */
@@ -87,13 +100,19 @@ h2 {
   border-radius: 6px;
   text-align: center;
   padding: 10px;
-  width: calc(50% - 40px);
+  width: calc(50% - 20px);
   max-width: 200px;
   box-shadow: 0 3px 10px gray;
 }
 
 .skill img {
   height: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .skill {
+    width: calc(100% - 40px);
+  }
 }
 
 /* Projects Section */
@@ -110,6 +129,7 @@ h2 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 15px;
   max-width: 300px;
+  width: 90%;
   text-align: left;
 }
 
@@ -129,13 +149,14 @@ h2 {
   border-radius: 6px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   max-width: 300px;
+  width: 90%;
 }
 
 /* Form Section */
 fieldset {
   border: none;
   padding: 20px;
-  max-width: 500px;
+  max-width: 90%;
   margin: auto;
 }
 
@@ -180,43 +201,4 @@ button:hover {
 
 .popup img {
   width: 50px;
-}
-
-/* Media Queries for Mobile Responsiveness */
-@media screen and (max-width: 768px) {
-  #home {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .topmenu {
-    font-size: 1rem;
-  }
-
-  .profile_name {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-
-  .skill {
-    width: 100%;
-    max-width: none;
-  }
-
-  .project-card, .recommendation {
-    width: 90%;
-    max-width: none;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  #about-me h1 {
-    font-size: 1.5rem;
-  }
-
-  #about-me p {
-    font-size: 0.9rem;
-  }
 }
