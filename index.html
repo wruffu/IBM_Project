@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>William Ruffu- AI Developer & Data Analyst Portfolio</title>
-    <link rel="stylesheet" href="./style.css"/>
-    <script src="./script.js"></script>
+    <title>Will Ruffu - AI Developer & Data Analyst Portfolio</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
   </head>
   <body>
     <!-- Navigation Bar -->
@@ -14,15 +14,17 @@
         <div class="profile_name">
           William Ruffu
           <div class="contact_info">
-            <img src="html_finalprojimages/envelope.png" alt="https://icons8.com/icon/124377/circled-envelope"/>
-          wruffu@gmail.com
-        </div>
-        <div style="clear:both;"></div>
-        <div class="contact_info">
-          <img src="html_finalprojimages/phone.png" alt="https://icons8.com/icon/124377/circled-envelope"/>
-          +19405970564
-
-        </div>
+            <a href="mailto:wruffu@gmail.com">
+              <img src="./html_finalprojimages/envelope.png" alt="Email Icon" />
+              wruffu@gmail.com
+            </a>
+          </div>
+          <div class="contact_info">
+            <a href="tel:+19405970564">
+              <img src="./html_finalprojimages/phone.png" alt="Phone Icon" />
+              +19405970564
+            </a>
+          </div>
         </div>
         <div class="topdiv">
           <a class="topmenu" href="#about-me">About Me</a>
@@ -34,120 +36,87 @@
     </nav>
 
     <!-- About Me -->
-    <section id="about-me" class="container">
-     <div style="width:480px">
-          <iframe allow="fullscreen" frameBorder="0" height="270" src="https://giphy.com/embed/KpJ47gKe6b7v7xQyWj/video?mute=true" width="480"></iframe>
+    <section id="about-me" class="container about-me">
+      <div style="width:480px; margin: 20px auto;">
+        <iframe allow="fullscreen" frameBorder="0" height="270" src="https://giphy.com/embed/KpJ47gKe6b7v7xQyWj/video?mute=true" width="480"></iframe>
       </div>
-
       <div>
-          <h1>
-            Hi, I'm William Ruffu! <img src="html_finalprojimages/waving-hand.png" width="60px"/>
-          </h1>
-          <p>
-            I am an aspiring AI developer with skills in Python, Flask and Juypter notebooks. 
-            I have a background in Logistics and Program Management and decided to change careers in 2022.
-            Seeing the incredible potential of AI has inspired me to focus on Data Science and AI integrations.  
-            Check out my projects below! 
-                      </p>
+        <h1>
+          Hi, I'm William Ruffu! <img src="./html_finalprojimages/waving-hand.png" width="60px" alt="Waving Hand" />
+        </h1>
+        <p>
+          I am an aspiring AI developer with skills in Python, Flask, and Jupyter notebooks. 
+          I have a background in Logistics and Program Management and decided to change careers in 2022.
+          Seeing the incredible potential of AI has inspired me to focus on Data Science and AI integrations.  
+          Check out my projects below! 
+        </p>
       </div>
     </section>
               
     <!-- Skills -->
     <section id="skills">
       <h2>Skills</h2>
-      <div style="clear:both;"></div>
-
       <div class="all_skills">
         <div class="skill">
-          <img src="html_finalprojimages/html5.png"/>
+          <img src="./html_finalprojimages/html5.png" alt="HTML Icon" />
           <h6>HTML</h6>
-          <p>1 years experience</p>
+          <p>1 year experience</p>
         </div>  
-
         <div class="skill">
-          <img src="html_finalprojimages/excel-96.png"/>
+          <img src="./html_finalprojimages/excel-96.png" alt="Excel Icon" />
           <h6>Excel</h6>
           <p>15 years experience</p>
         </div>  
-
         <div class="skill">
-          <img src="html_finalprojimages/python-logo2.png"/>
+          <img src="./html_finalprojimages/python-logo2.png" alt="Python Icon" />
           <h6>Python</h6>
-          <p>1 years experience</p>
+          <p>1 year experience</p>
         </div>  
-
         <div class="skill">
-          <img src="html_finalprojimages/sql-red.png"/>
+          <img src="./html_finalprojimages/sql-red.png" alt="SQL Redshift Icon" />
           <h6>SQL Redshift</h6>
           <p>4 years experience</p>
         </div>  
-
         <div class="skill">
-          <img src="html_finalprojimages/tableau2.png"/>
+          <img src="./html_finalprojimages/tableau2.png" alt="Tableau Icon" />
           <h6>Tableau</h6>
           <p>2 years experience</p>
         </div>  
-
       </div>
     </section>
           
     <!-- Projects -->
     <section class="projects" id="projects">
-      <h2>
-        Projects
-      </h2>
-      <div style="clear:both;"></div>
-
-        <div id="projects-container" class="projects-container">
-          <div class="project-card">
-            <h3>Chatbot</h3>
-            <ul>
-              <li>Developed a secure website integrated with chatbot for an automobile client using HTML, CSS, JavaScript and IBM Watson Assistant</li>
-            </ul>
-          </div>
-          <hr>
-          <div class="project-card">
-            <h3>Sentiment Analyzer</h3>
-            <ul>
-              <li>Developed and deployed a sentiment analyzer for the box reviews section of an eCommerce platform using Juypter Notebooks on Claude 2.0</li>
-            </ul>
-          </div>
-          <hr>
-          <div class="project-card">
-            <h3>KPI Dashboards</h3>
-            <ul>
-              <li>Created a styled multi-page dashboards for senoir leadership and integrated it with KPI metrics from ETL jobs.</li>
-            </ul>
-          </div>
-    </div>
+      <h2>Projects</h2>
+      <div id="projects-container" class="projects-container">
+        <div class="project-card">
+          <h3>Chatbot</h3>
+          <ul>
+            <li>Developed a secure website integrated with a chatbot for an automobile client using HTML, CSS, JavaScript, and IBM Watson Assistant</li>
+          </ul>
+        </div>
+        <div class="project-card">
+          <h3>Sentiment Analyzer</h3>
+          <ul>
+            <li>Developed and deployed a sentiment analyzer for the box reviews section of an eCommerce platform using Jupyter Notebooks on Claude 2.0</li>
+          </ul>
+        </div>
+        <div class="project-card">
+          <h3>KPI Dashboards</h3>
+          <ul>
+            <li>Created styled multi-page dashboards for senior leadership and integrated them with KPI metrics from ETL jobs.</li>
+          </ul>
+        </div>
+      </div>
     </section>
-    <div style="clear:both;"></div>
 
     <!-- Recommendations -->
     <section id="recommendations">
       <h2>Recommendations</h2>
-      <div style="clear:both;"></div>
-      <div class="all_recommendations" id="all_recommendations">
+      <div id="all_recommendations" class="all_recommendations">
         <div class="recommendation">
           <span>&#8220;</span>
-          William is a very quick learner and quickly grasps key concepts of Web development. 
-          He got a great attitude & she is an excellent team player. 
-          He has a curious mind and asks the right question. 
-          He takes initiative within a team and has potentials to lead the team.
-          <span>&#8221;</span>
-        </div>
-        <div class="recommendation">
-          <span>&#8220;</span>
-          Working with William has been an awesome experience. 
-          He is highly knowledgable and always goes the extra step to make sure everything is right. 
-          For any future projects that need her expertise I would definitely want to work with him again.
-          <span>&#8221;</span>
-        </div>
-        <div class="recommendation">
-          <span>&#8220;</span>
-          I had worked along with Will during the initial phase of our venture which needed Web development. 
-          He is a committed resource who has knowledge about the domain. 
-          He will be an asset for any organisation! 
+          William is a very quick learner and quickly grasps key concepts of web development. He got a great attitude & is an excellent team player.
           <span>&#8221;</span>
         </div>
       </div>
@@ -155,33 +124,18 @@
 
     <!-- Recommendation Form -->
     <section id="contact">
-      <div class="flex_center">
-        <fieldset>
-          <legend class="introduction">Leave a Recommendation</legend>          
-          <input type="text" placeholder="Name (Optional)"> <br/>
-          <textarea id="new_recommendation" cols="500" rows="10" placeholder="Message"></textarea>
-          <div class="flex_center">
-            <button id="recommend_btn" onclick="addRecommendation()">Submit</button>
-          </div>
-        </fieldset>
-      </div>
+      <fieldset>
+        <legend class="introduction">Leave a Recommendation</legend>          
+        <input type="text" id="name" placeholder="Name (Optional)" />
+        <textarea id="new_recommendation" cols="30" rows="5" placeholder="Message"></textarea>
+        <button id="recommend_btn" onclick="addRecommendation()">Submit</button>
+      </fieldset>
     </section>
 
-    <div class="iconbutton">
-      <a href="#home">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" width="63px">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <img src="html_finalprojimages/home-icon.png" alt="Home Icon" style="width: 50px; height: 50px;"/>
-      </a>
-    </div>
-
-    <div class="popup" id="popup" class="flex_center">
-      <img src="html_finalprojimages/checkmark--outline.svg"/>
-      <h3>
-        Recommendation submitted successfully!
-      </h3>
-      <button onclick="showPopup(true)">Ok</button>
+    <div class="popup" id="popup">
+      <img src="./html_finalprojimages/checkmark--outline.svg" alt="Checkmark Icon" />
+      <h3>Recommendation submitted successfully!</h3>
+      <button onclick="showPopup(false)">Ok</button>
     </div>
   </body>
 </html>
