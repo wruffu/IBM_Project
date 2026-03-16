@@ -236,17 +236,26 @@ const startDates = {
   opencv:      '2024-01', docker:      '2023-06',
 };
 
-function calcYears(str) {
-  const [y, m] = str.split('-').map(Number);
-  const diff = (Date.now() - new Date(y, m - 1, 1)) / (365.25 * 864e5);
-  return Math.max(1, Math.floor(diff));
+// Skills with a defined end date — caps the year count at career pivot
+const endDates = {
+  logistics:   '2019-01', // core logistics career 2007–2019 = 12 yrs
+  supplychain: '2019-01',
+};
+
+function calcYears(startStr, endStr) {
+  const [sy, sm] = startStr.split('-').map(Number);
+  const start = new Date(sy, sm - 1, 1);
+  const end = endStr
+    ? (() => { const [ey, em] = endStr.split('-').map(Number); return new Date(ey, em - 1, 1); })()
+    : new Date();
+  return Math.max(1, Math.floor((end - start) / (365.25 * 864e5)));
 }
 
 function applySkillYears() {
   document.querySelectorAll('[data-skill]').forEach(el => {
     const k = el.dataset.skill;
     if (startDates[k]) {
-      const y = calcYears(startDates[k]);
+      const y = calcYears(startDates[k], endDates[k]);
       el.textContent = `${y} yr${y !== 1 ? 's' : ''}`;
     }
   });
