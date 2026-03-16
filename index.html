@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>William Ruffu — AI Engineer &amp; Logistics Expert</title>
   <meta name="description" content="William Ruffu: 15+ years in logistics and supply chain, now building AI/ML systems. PyTorch, computer vision, NLP, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ======================================================
-       NAV
-       ====================================================== -->
+  <div id="scroll-progress"></div>
+
+  <!-- NAV -->
   <nav id="nav">
     <span class="nav-brand">W. RUFFU</span>
     <ul class="nav-links">
@@ -21,39 +24,28 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
       <li>
-        <span id="status-badge">
-          <span class="dot"></span> CHECKING...
-        </span>
+        <span id="status-badge"><span class="dot"></span> CHECKING...</span>
       </li>
     </ul>
   </nav>
 
-  <!-- ======================================================
-       HERO
-       ====================================================== -->
+  <!-- HERO -->
   <section id="hero">
-    <div class="road-scene">
-      <div class="road-shoulder-left"></div>
-      <div class="road-shoulder-right"></div>
-      <div class="road"></div>
-      <div class="dash-track"><!-- populated by JS --></div>
-      <div class="constellation"><!-- populated by JS --></div>
-    </div>
+    <canvas id="hero-canvas"></canvas>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">// PORTFOLIO — FULL STACK ENGINEER</p>
-      <h1 class="hero-name">WILLIAM RUFFU</h1>
-      <p class="hero-subtitle">Supply Chain → AI Engineer</p>
+      <p class="hero-eyebrow">// AI ENGINEER &amp; LOGISTICS VETERAN</p>
+      <h1 class="hero-name">WILLIAM<br>RUFFU</h1>
+      <p class="hero-subtitle">Supply Chain <span class="arrow">→</span> AI Engineer</p>
       <div class="hero-ctas">
         <a href="#about" class="btn-primary">VIEW MY JOURNEY ▸</a>
         <button class="btn-secondary" id="hero-chat-btn">📻 TALK TO THE DISPATCHER</button>
       </div>
     </div>
+    <div class="hero-scroll-hint">SCROLL</div>
   </section>
 
-  <!-- ======================================================
-       STATS BAR
-       ====================================================== -->
+  <!-- STATS BAR -->
   <div id="stats">
     <div class="stats-grid">
       <div class="stat-item">
@@ -75,16 +67,15 @@
     </div>
   </div>
 
-  <!-- ======================================================
-       ABOUT
-       ====================================================== -->
+  <!-- ABOUT -->
   <section id="about">
     <div class="container">
-      <p class="section-label">// 01 — ABOUT</p>
-      <h2 class="section-title">TWO ROUTES, <span>ONE DESTINATION</span></h2>
+      <div class="section-header reveal">
+        <p class="section-label">// 01 — ABOUT</p>
+        <h2 class="section-title">TWO ROUTES, <span>ONE DESTINATION</span></h2>
+      </div>
       <div class="about-grid">
-
-        <div class="about-card">
+        <div class="about-card glass reveal">
           <div class="about-card-header">
             <span class="about-card-icon">🚛</span>
             <span class="about-card-title">LOGISTICS CAREER</span>
@@ -92,35 +83,23 @@
           <div class="route-tag">ROUTE: 2007 → 2022</div>
           <div class="timeline-item">
             <span class="tl-year">2007</span>
-            <div>
-              <div class="tl-role">Fleet & Operations Coordinator</div>
-              <div class="tl-detail">Entered transportation management, coordinating multi-truck fleets across regional routes.</div>
-            </div>
+            <div><div class="tl-role">Fleet &amp; Operations Coordinator</div><div class="tl-detail">Entered transportation management, coordinating multi-truck fleets across regional routes.</div></div>
           </div>
           <div class="timeline-item">
             <span class="tl-year">2012</span>
-            <div>
-              <div class="tl-role">Supply Chain Analyst</div>
-              <div class="tl-detail">Built Excel-based KPI dashboards and delivery optimization reports for senior leadership.</div>
-            </div>
+            <div><div class="tl-role">Supply Chain Analyst</div><div class="tl-detail">Built Excel-based KPI dashboards and delivery optimization reports for senior leadership.</div></div>
           </div>
           <div class="timeline-item">
             <span class="tl-year">2019</span>
-            <div>
-              <div class="tl-role">Data & Operations Lead</div>
-              <div class="tl-detail">Migrated reporting pipelines to Redshift SQL; designed Tableau dashboards tracking fleet utilization.</div>
-            </div>
+            <div><div class="tl-role">Data &amp; Operations Lead</div><div class="tl-detail">Migrated pipelines to Redshift SQL; designed Tableau dashboards tracking fleet utilization.</div></div>
           </div>
           <div class="timeline-item">
             <span class="tl-year">2021</span>
-            <div>
-              <div class="tl-role">Transportation Manager</div>
-              <div class="tl-detail">Oversaw large-scale logistics operations, ETL pipelines, and real-time delivery analytics.</div>
-            </div>
+            <div><div class="tl-role">Transportation Manager</div><div class="tl-detail">Oversaw large-scale logistics operations, ETL pipelines, and real-time delivery analytics.</div></div>
           </div>
         </div>
 
-        <div class="about-card">
+        <div class="about-card glass reveal">
           <div class="about-card-header">
             <span class="about-card-icon">🤖</span>
             <span class="about-card-title">AI / ML PIVOT</span>
@@ -128,102 +107,121 @@
           <div class="route-tag">ROUTE: 2022 → NOW</div>
           <div class="timeline-item">
             <span class="tl-year">2022</span>
-            <div>
-              <div class="tl-role">Self-Directed ML Engineering</div>
-              <div class="tl-detail">Pivoted full-time into AI/ML — Python, neural networks, Jupyter notebooks, and deep learning foundations.</div>
-            </div>
+            <div><div class="tl-role">Self-Directed ML Engineering</div><div class="tl-detail">Pivoted full-time into AI/ML — Python, neural networks, Jupyter, and deep learning foundations.</div></div>
           </div>
           <div class="timeline-item">
             <span class="tl-year">2023</span>
-            <div>
-              <div class="tl-role">Deep Learning Projects</div>
-              <div class="tl-detail">Built CNNs with PyTorch &amp; TensorFlow/Keras; trained custom object detectors; NLP topic modeling.</div>
-            </div>
+            <div><div class="tl-role">Deep Learning Projects</div><div class="tl-detail">Built CNNs with PyTorch &amp; TensorFlow/Keras; trained custom object detectors; NLP topic modeling.</div></div>
           </div>
           <div class="timeline-item">
             <span class="tl-year">2024</span>
-            <div>
-              <div class="tl-role">Computer Vision &amp; LLM Ops</div>
-              <div class="tl-detail">COCO dataset object detection, OpenCV pipelines, Faster-RCNN; self-hosted Llama 3.1 70B on DGX Spark.</div>
-            </div>
+            <div><div class="tl-role">Computer Vision &amp; LLM Ops</div><div class="tl-detail">COCO object detection, OpenCV pipelines, Faster-RCNN; self-hosted Llama 3.1 70B on DGX Spark.</div></div>
           </div>
           <div class="timeline-item">
             <span class="tl-year">NOW</span>
-            <div>
-              <div class="tl-role">AI Engineer / LLM Ops</div>
-              <div class="tl-detail">Running production LLM inference on NVIDIA GB10, building AI-powered tools and portfolio applications.</div>
-            </div>
+            <div><div class="tl-role">AI Engineer / LLM Ops</div><div class="tl-detail">Production LLM inference on NVIDIA GB10, building AI-powered tools and portfolio applications.</div></div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ======================================================
-       SKILLS
-       ====================================================== -->
+  <!-- SKILLS -->
   <section id="skills">
     <div class="container">
-      <p class="section-label">// 02 — SKILLS</p>
-      <h2 class="section-title">TOOLS OF THE <span>TRADE</span></h2>
+      <div class="section-header reveal">
+        <p class="section-label">// 02 — SKILLS</p>
+        <h2 class="section-title">TOOLS OF THE <span>TRADE</span></h2>
+      </div>
       <div class="skills-grid">
 
-        <div>
+        <div class="skill-group glass reveal">
           <div class="skill-group-title">Transport &amp; Operations</div>
+
           <div class="skill-item">
-            <span class="skill-icon">🚚</span>
-            <span class="skill-name">Logistics Management</span>
-            <span class="skill-badge" data-skill="logistics">—</span>
+            <div class="skill-header">
+              <span class="skill-icon">🚚</span>
+              <span class="skill-name">Logistics Management</span>
+              <span class="skill-badge" data-skill="logistics">—</span>
+            </div>
+            <div class="skill-bar-wrap"><div class="skill-bar-fill" data-pct="95"></div></div>
           </div>
           <div class="skill-item">
-            <span class="skill-icon">📊</span>
-            <span class="skill-name">Excel / Data Modeling</span>
-            <span class="skill-badge" data-skill="excel">—</span>
+            <div class="skill-header">
+              <span class="skill-icon">📊</span>
+              <span class="skill-name">Excel / Data Modeling</span>
+              <span class="skill-badge" data-skill="excel">—</span>
+            </div>
+            <div class="skill-bar-wrap"><div class="skill-bar-fill" data-pct="90"></div></div>
           </div>
           <div class="skill-item">
-            <span class="skill-icon">🗄️</span>
-            <span class="skill-name">SQL (Redshift)</span>
-            <span class="skill-badge" data-skill="sql">—</span>
+            <div class="skill-header">
+              <span class="skill-icon">🗄️</span>
+              <span class="skill-name">SQL (Redshift)</span>
+              <span class="skill-badge" data-skill="sql">—</span>
+            </div>
+            <div class="skill-bar-wrap"><div class="skill-bar-fill" data-pct="78"></div></div>
           </div>
           <div class="skill-item">
-            <span class="skill-icon">📈</span>
-            <span class="skill-name">Tableau</span>
-            <span class="skill-badge" data-skill="tableau">—</span>
+            <div class="skill-header">
+              <span class="skill-icon">📈</span>
+              <span class="skill-name">Tableau</span>
+              <span class="skill-badge" data-skill="tableau">—</span>
+            </div>
+            <div class="skill-bar-wrap"><div class="skill-bar-fill" data-pct="72"></div></div>
           </div>
           <div class="skill-item">
-            <span class="skill-icon">🔗</span>
-            <span class="skill-name">Supply Chain Ops</span>
-            <span class="skill-badge" data-skill="supplychain">—</span>
+            <div class="skill-header">
+              <span class="skill-icon">🔗</span>
+              <span class="skill-name">Supply Chain Ops</span>
+              <span class="skill-badge" data-skill="supplychain">—</span>
+            </div>
+            <div class="skill-bar-wrap"><div class="skill-bar-fill" data-pct="93"></div></div>
           </div>
         </div>
 
-        <div>
+        <div class="skill-group glass reveal">
           <div class="skill-group-title">AI &amp; Data Engineering</div>
+
           <div class="skill-item">
-            <span class="skill-icon">🐍</span>
-            <span class="skill-name">Python</span>
-            <span class="skill-badge" data-skill="python">—</span>
+            <div class="skill-header">
+              <span class="skill-icon">🐍</span>
+              <span class="skill-name">Python</span>
+              <span class="skill-badge" data-skill="python">—</span>
+            </div>
+            <div class="skill-bar-wrap"><div class="skill-bar-fill" data-pct="72"></div></div>
           </div>
           <div class="skill-item">
-            <span class="skill-icon">🔥</span>
-            <span class="skill-name">PyTorch</span>
-            <span class="skill-badge" data-skill="pytorch">—</span>
+            <div class="skill-header">
+              <span class="skill-icon">🔥</span>
+              <span class="skill-name">PyTorch</span>
+              <span class="skill-badge" data-skill="pytorch">—</span>
+            </div>
+            <div class="skill-bar-wrap"><div class="skill-bar-fill" data-pct="62"></div></div>
           </div>
           <div class="skill-item">
-            <span class="skill-icon">🧠</span>
-            <span class="skill-name">TensorFlow / Keras</span>
-            <span class="skill-badge" data-skill="tensorflow">—</span>
+            <div class="skill-header">
+              <span class="skill-icon">🧠</span>
+              <span class="skill-name">TensorFlow / Keras</span>
+              <span class="skill-badge" data-skill="tensorflow">—</span>
+            </div>
+            <div class="skill-bar-wrap"><div class="skill-bar-fill" data-pct="60"></div></div>
           </div>
           <div class="skill-item">
-            <span class="skill-icon">👁️</span>
-            <span class="skill-name">OpenCV / Computer Vision</span>
-            <span class="skill-badge" data-skill="opencv">—</span>
+            <div class="skill-header">
+              <span class="skill-icon">👁️</span>
+              <span class="skill-name">OpenCV / Computer Vision</span>
+              <span class="skill-badge" data-skill="opencv">—</span>
+            </div>
+            <div class="skill-bar-wrap"><div class="skill-bar-fill" data-pct="50"></div></div>
           </div>
           <div class="skill-item">
-            <span class="skill-icon">🐳</span>
-            <span class="skill-name">Docker / CUDA</span>
-            <span class="skill-badge" data-skill="docker">—</span>
+            <div class="skill-header">
+              <span class="skill-icon">🐳</span>
+              <span class="skill-name">Docker / CUDA</span>
+              <span class="skill-badge" data-skill="docker">—</span>
+            </div>
+            <div class="skill-bar-wrap"><div class="skill-bar-fill" data-pct="56"></div></div>
           </div>
         </div>
 
@@ -231,84 +229,66 @@
     </div>
   </section>
 
-  <!-- ======================================================
-       PROJECTS
-       ====================================================== -->
+  <!-- PROJECTS -->
   <section id="projects">
     <div class="container">
-      <p class="section-label">// 03 — PROJECTS</p>
-      <h2 class="section-title">ML <span>NOTEBOOK FLEET</span></h2>
+      <div class="section-header reveal">
+        <p class="section-label">// 03 — PROJECTS</p>
+        <h2 class="section-title">ML <span>NOTEBOOK FLEET</span></h2>
+      </div>
       <div class="projects-grid">
 
-        <div class="project-card">
+        <div class="project-card reveal" style="--card-hue: #f59e0b;">
+          <div class="card-accent-bar"></div>
           <div class="project-number">PROJECT_01</div>
           <div class="project-title">PyTorch CNN Classifier</div>
-          <div class="project-desc">Custom convolutional neural network built from scratch in PyTorch. Explores architecture design, training loops, and evaluation on image classification tasks.</div>
-          <div class="project-tags">
-            <span class="tag">PyTorch</span>
-            <span class="tag">CNN</span>
-            <span class="tag">CUDA</span>
-          </div>
+          <div class="project-desc">Custom convolutional neural network built from scratch in PyTorch. Architecture design, training loops, and evaluation on image classification tasks.</div>
+          <div class="project-tags"><span class="tag">PyTorch</span><span class="tag">CNN</span><span class="tag">CUDA</span></div>
           <a class="btn-card" href="https://github.com/wruffu/Wills-Portfolio" target="_blank" rel="noopener">[ VIEW ON GITHUB ]</a>
         </div>
 
-        <div class="project-card">
+        <div class="project-card reveal" style="--card-hue: #3b82f6;">
+          <div class="card-accent-bar"></div>
           <div class="project-number">PROJECT_02</div>
           <div class="project-title">COCO Object Detection</div>
-          <div class="project-desc">Faster-RCNN pipeline trained on the COCO dataset. Implements transfer learning, anchor boxes, and real-time bounding box inference on custom images.</div>
-          <div class="project-tags">
-            <span class="tag">Faster-RCNN</span>
-            <span class="tag">COCO</span>
-            <span class="tag">OpenCV</span>
-          </div>
+          <div class="project-desc">Faster-RCNN pipeline trained on the COCO dataset. Transfer learning, anchor boxes, and real-time bounding box inference on custom images.</div>
+          <div class="project-tags"><span class="tag">Faster-RCNN</span><span class="tag">COCO</span><span class="tag">OpenCV</span></div>
           <a class="btn-card" href="https://github.com/wruffu/Wills-Portfolio" target="_blank" rel="noopener">[ VIEW ON GITHUB ]</a>
         </div>
 
-        <div class="project-card">
+        <div class="project-card reveal" style="--card-hue: #8b5cf6;">
+          <div class="card-accent-bar"></div>
           <div class="project-number">PROJECT_03</div>
           <div class="project-title">NLP Topic Modeling</div>
-          <div class="project-desc">Unsupervised topic extraction using LDA and transformer-based approaches on a logistics/supply chain corpus. Includes keyword visualization and cluster analysis.</div>
-          <div class="project-tags">
-            <span class="tag">NLP</span>
-            <span class="tag">LDA</span>
-            <span class="tag">Jupyter</span>
-          </div>
+          <div class="project-desc">Unsupervised topic extraction using LDA and transformer-based approaches on a logistics corpus. Includes keyword visualization and cluster analysis.</div>
+          <div class="project-tags"><span class="tag">NLP</span><span class="tag">LDA</span><span class="tag">Jupyter</span></div>
           <a class="btn-card" href="https://github.com/wruffu/Wills-Portfolio" target="_blank" rel="noopener">[ VIEW ON GITHUB ]</a>
         </div>
 
-        <div class="project-card">
+        <div class="project-card reveal" style="--card-hue: #10b981;">
+          <div class="card-accent-bar"></div>
           <div class="project-number">PROJECT_04</div>
           <div class="project-title">Computer Vision Pipeline</div>
           <div class="project-desc">End-to-end OpenCV pipeline for real-time image processing: edge detection, contour analysis, morphological transforms, and video frame inference.</div>
-          <div class="project-tags">
-            <span class="tag">OpenCV</span>
-            <span class="tag">Python</span>
-            <span class="tag">NumPy</span>
-          </div>
+          <div class="project-tags"><span class="tag">OpenCV</span><span class="tag">Python</span><span class="tag">NumPy</span></div>
           <a class="btn-card" href="https://github.com/wruffu/Wills-Portfolio" target="_blank" rel="noopener">[ VIEW ON GITHUB ]</a>
         </div>
 
-        <div class="project-card">
+        <div class="project-card reveal" style="--card-hue: #ef4444;">
+          <div class="card-accent-bar"></div>
           <div class="project-number">PROJECT_05</div>
           <div class="project-title">Keras Neural Network</div>
-          <div class="project-desc">Multi-layer perceptron and sequence models built with Keras. Covers regularization, dropout, batch normalization, and hyperparameter tuning workflows.</div>
-          <div class="project-tags">
-            <span class="tag">Keras</span>
-            <span class="tag">TensorFlow</span>
-            <span class="tag">MLP</span>
-          </div>
+          <div class="project-desc">Multi-layer perceptron and sequence models built with Keras. Covers regularization, dropout, batch normalization, and hyperparameter tuning.</div>
+          <div class="project-tags"><span class="tag">Keras</span><span class="tag">TensorFlow</span><span class="tag">MLP</span></div>
           <a class="btn-card" href="https://github.com/wruffu/Wills-Portfolio" target="_blank" rel="noopener">[ VIEW ON GITHUB ]</a>
         </div>
 
-        <div class="project-card">
+        <div class="project-card reveal" style="--card-hue: #06b6d4;">
+          <div class="card-accent-bar"></div>
           <div class="project-number">PROJECT_06</div>
           <div class="project-title">Sentiment &amp; Recommender</div>
-          <div class="project-desc">Sentiment analysis on product/review datasets combined with a collaborative filtering recommender system. Deployed as an interactive Jupyter notebook.</div>
-          <div class="project-tags">
-            <span class="tag">NLP</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">Sklearn</span>
-          </div>
+          <div class="project-desc">Sentiment analysis on product review datasets combined with a collaborative filtering recommender system. Deployed as an interactive Jupyter notebook.</div>
+          <div class="project-tags"><span class="tag">NLP</span><span class="tag">Pandas</span><span class="tag">Sklearn</span></div>
           <a class="btn-card" href="https://github.com/wruffu/Wills-Portfolio" target="_blank" rel="noopener">[ VIEW ON GITHUB ]</a>
         </div>
 
@@ -316,79 +296,79 @@
     </div>
   </section>
 
-  <!-- ======================================================
-       EXPERIENCE
-       ====================================================== -->
+  <!-- EXPERIENCE -->
   <section id="experience">
     <div class="container">
-      <p class="section-label">// 04 — EXPERIENCE</p>
-      <h2 class="section-title">MILES <span>LOGGED</span></h2>
+      <div class="section-header reveal">
+        <p class="section-label">// 04 — EXPERIENCE</p>
+        <h2 class="section-title">MILES <span>LOGGED</span></h2>
+      </div>
       <div class="exp-timeline">
 
-        <div class="exp-entry">
+        <div class="exp-entry reveal">
+          <div class="exp-dot"></div>
           <div class="exp-period">2024 — PRESENT</div>
           <div class="exp-title">AI Engineer / LLM Ops</div>
           <div class="exp-company">Self-Directed · NVIDIA DGX Spark</div>
           <div class="exp-desc">Self-hosting Llama 3.1 70B on a 128GB unified-memory GB10 GPU. Building production inference infrastructure with vLLM, Docker, Cloudflare tunnels, and custom API proxies. Developing portfolio AI applications powered by local LLM inference.</div>
         </div>
 
-        <div class="exp-entry">
+        <div class="exp-entry reveal">
+          <div class="exp-dot"></div>
           <div class="exp-period">2022 — 2024</div>
           <div class="exp-title">ML Engineering (Self-Directed)</div>
           <div class="exp-company">Independent Projects · GitHub</div>
           <div class="exp-desc">Built 40+ Jupyter notebooks covering deep learning, computer vision, NLP, and recommender systems. Mastered PyTorch, TensorFlow/Keras, OpenCV, and the full Python ML stack. Transitioned domain knowledge from logistics data to AI-driven analytics.</div>
         </div>
 
-        <div class="exp-entry">
+        <div class="exp-entry reveal">
+          <div class="exp-dot"></div>
           <div class="exp-period">2019 — 2022</div>
           <div class="exp-title">Transportation Manager / Data Lead</div>
           <div class="exp-company">Logistics Operations</div>
           <div class="exp-desc">Managed large-scale fleet operations and built ETL pipelines in Amazon Redshift. Designed executive Tableau dashboards tracking KPIs across delivery networks. Led data-driven decisions that reduced operational costs and improved on-time delivery rates.</div>
         </div>
 
-        <div class="exp-entry">
+        <div class="exp-entry reveal">
+          <div class="exp-dot"></div>
           <div class="exp-period">2007 — 2019</div>
           <div class="exp-title">Supply Chain &amp; Fleet Coordinator</div>
           <div class="exp-company">Transportation &amp; Logistics Industry</div>
-          <div class="exp-desc">Over 12 years coordinating multi-truck fleets, managing vendor relationships, and building Excel-based reporting systems. Developed deep expertise in supply chain optimization, routing logistics, and operational analytics before pivoting to AI engineering.</div>
+          <div class="exp-desc">Over 12 years coordinating multi-truck fleets, managing vendor relationships, and building Excel-based reporting systems. Deep expertise in supply chain optimization, routing logistics, and operational analytics before pivoting to AI engineering.</div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ======================================================
-       CONTACT
-       ====================================================== -->
+  <!-- CONTACT -->
   <section id="contact">
     <div class="container">
-      <p class="section-label">// 05 — CONTACT</p>
-      <h2 class="section-title">LET'S <span>CONNECT</span></h2>
-      <p class="contact-intro">Open to AI/ML engineering roles, consulting projects, and collaborations at the intersection of logistics and machine learning.</p>
-      <div class="contact-links">
+      <div class="section-header reveal">
+        <p class="section-label">// 05 — CONTACT</p>
+        <h2 class="section-title">LET'S <span>CONNECT</span></h2>
+      </div>
+      <p class="contact-intro reveal">Open to AI/ML engineering roles, consulting projects, and collaborations at the intersection of logistics and machine learning.</p>
+      <div class="contact-links reveal">
         <a class="contact-link" href="mailto:william.ruffu@gmail.com">
-          <span>✉</span> william.ruffu@gmail.com
+          <span class="contact-icon">✉</span>william.ruffu@gmail.com
         </a>
         <a class="contact-link" href="https://github.com/wruffu" target="_blank" rel="noopener">
-          <span>⌥</span> github.com/wruffu
+          <span class="contact-icon">⌥</span>github.com/wruffu
         </a>
         <a class="contact-link" href="https://www.linkedin.com/in/williamenterprises/" target="_blank" rel="noopener">
-          <span>in</span> LinkedIn
+          <span class="contact-icon">in</span>LinkedIn
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ======================================================
-       FOOTER
-       ====================================================== -->
+  <!-- FOOTER -->
   <footer>
     <span>© 2026 William Ruffu · Built on NVIDIA DGX Spark · Powered by Llama 3.1 70B</span>
   </footer>
 
-  <!-- ======================================================
-       CHATBOT WIDGET
-       ====================================================== -->
+  <!-- CHATBOT -->
   <button id="dispatcher-btn">📻 THE DISPATCHER</button>
 
   <div id="chat-panel">
@@ -402,18 +382,14 @@
       </div>
       <button id="chat-close">✕</button>
     </div>
-
     <div class="chat-messages" id="chat-messages">
-      <div class="msg bot">
-        Hey there — I'm The Dispatcher, William's AI assistant. Ask me anything about his background, skills, or projects. What's your 10-4?
-      </div>
+      <div class="msg bot">Hey there — I'm The Dispatcher, William's AI assistant. Ask me anything about his background, skills, or projects. What's your 10-4?</div>
       <div class="chip-prompts">
         <span class="chip">What's William's background?</span>
         <span class="chip">What ML projects has he built?</span>
         <span class="chip">Tell me about his logistics experience</span>
       </div>
     </div>
-
     <div class="chat-input-row">
       <input type="text" id="chat-input" placeholder="Ask The Dispatcher..." autocomplete="off" />
       <button id="chat-send">SEND</button>
@@ -422,12 +398,10 @@
 
   <script src="script.js"></script>
   <script>
-    // Wire the hero CTA to open the chatbot
     document.getElementById('hero-chat-btn')?.addEventListener('click', () => {
       document.getElementById('chat-panel')?.classList.add('open');
       document.getElementById('chat-input')?.focus();
     });
   </script>
-
 </body>
 </html>
