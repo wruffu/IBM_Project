@@ -495,6 +495,57 @@ async function sendMessage() {
 }
 
 /* =========================================================
+   COMMENT PANEL WIDGET
+   ========================================================= */
+const COMMENT_ENDPOINT = 'https://llama.williamruffu.com/portfolio-comment';
+
+function initCommentPanel() {
+  const btn    = document.getElementById('comment-btn');
+  const panel  = document.getElementById('comment-panel');
+  const close  = document.getElementById('comment-close');
+  const submit = document.getElementById('comment-submit');
+  const status = document.getElementById('comment-status');
+  if (!btn || !panel) return;
+
+  btn.addEventListener('click', () => panel.classList.toggle('open'));
+  close?.addEventListener('click', () => panel.classList.remove('open'));
+
+  submit?.addEventListener('click', async () => {
+    const name    = document.getElementById('comment-name')?.value.trim() || '';
+    const comment = document.getElementById('comment-text')?.value.trim() || '';
+    const priv    = document.getElementById('comment-private')?.checked || false;
+
+    if (!comment) { status.textContent = 'Please write a comment first.'; return; }
+
+    submit.disabled = true;
+    status.textContent = 'Sending...';
+
+    try {
+      const res = await fetch(COMMENT_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, comment, private: priv }),
+      });
+      if (res.ok) {
+        status.style.color = '#4ade80';
+        status.textContent = 'Thanks for your comment!';
+        document.getElementById('comment-name').value = '';
+        document.getElementById('comment-text').value = '';
+        document.getElementById('comment-private').checked = false;
+      } else {
+        status.style.color = '#f87171';
+        status.textContent = 'Could not submit — try again.';
+      }
+    } catch {
+      status.style.color = '#f87171';
+      status.textContent = 'Network error — try again.';
+    } finally {
+      submit.disabled = false;
+    }
+  });
+}
+
+/* =========================================================
    INIT
    ========================================================= */
 document.addEventListener('DOMContentLoaded', () => {
@@ -506,5 +557,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initReveal();
   initCardTilt();
   initChatbot();
+  initCommentPanel();
   checkDispatcherStatus();
 });

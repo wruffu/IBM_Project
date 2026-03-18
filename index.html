@@ -39,7 +39,7 @@
       <p class="hero-subtitle">Supply Chain <span class="arrow">→</span> AI Engineer</p>
       <div class="hero-ctas">
         <a href="#about" class="btn-primary">VIEW MY JOURNEY ▸</a>
-        <button class="btn-secondary" id="hero-chat-btn">📻 TALK TO THE DISPATCHER</button>
+        <button class="btn-secondary" id="hero-chat-btn">📻 TALK TO DISPATCHER CHATBOT</button>
       </div>
     </div>
     <div class="hero-scroll-hint">SCROLL</div>
@@ -350,13 +350,13 @@
       </div>
       <p class="contact-intro reveal">Open to AI/ML engineering roles, consulting projects, and collaborations at the intersection of logistics and machine learning.</p>
       <div class="contact-links reveal">
-        <a class="contact-link" href="mailto:william.ruffu@gmail.com">
-          <span class="contact-icon">✉</span>william.ruffu@gmail.com
+        <a class="contact-link" href="mailto:williamruffu@gmail.com">
+          <span class="contact-icon">✉</span>williamruffu@gmail.com
         </a>
         <a class="contact-link" href="https://github.com/wruffu" target="_blank" rel="noopener">
           <span class="contact-icon">⌥</span>github.com/wruffu
         </a>
-        <a class="contact-link" href="https://www.linkedin.com/in/williamenterprises/" target="_blank" rel="noopener">
+        <a class="contact-link" href="https://www.linkedin.com/in/williamruffu/" target="_blank" rel="noopener">
           <span class="contact-icon">in</span>LinkedIn
         </a>
       </div>
@@ -369,21 +369,21 @@
   </footer>
 
   <!-- CHATBOT -->
-  <button id="dispatcher-btn">📻 THE DISPATCHER</button>
+  <button id="dispatcher-btn">📻 DISPATCHER CHATBOT</button>
 
   <div id="chat-panel">
     <div class="chat-header">
       <div class="chat-header-left">
         <span class="chat-header-icon">📻</span>
         <div>
-          <div class="chat-header-title">THE DISPATCHER</div>
+          <div class="chat-header-title">DISPATCHER CHATBOT</div>
           <div class="chat-header-sub">Powered by Llama 3.1 70B · Local Inference</div>
         </div>
       </div>
       <button id="chat-close">✕</button>
     </div>
     <div class="chat-messages" id="chat-messages">
-      <div class="msg bot">Hey there — I'm The Dispatcher, William's AI assistant. Ask me anything about his background, skills, or projects. What's your 10-4?</div>
+      <div class="msg bot">Hey there — I'm the Dispatcher Chatbot, William's AI assistant. Ask me anything about his background, skills, or projects. What's your 10-4?</div>
       <div class="chip-prompts">
         <span class="chip">What's William's background?</span>
         <span class="chip">What ML projects has he built?</span>
@@ -391,8 +391,36 @@
       </div>
     </div>
     <div class="chat-input-row">
-      <input type="text" id="chat-input" placeholder="Ask The Dispatcher..." autocomplete="off" />
+      <input type="text" id="chat-input" placeholder="Ask the Dispatcher Chatbot..." autocomplete="off" />
       <button id="chat-send">SEND</button>
+    </div>
+  </div>
+
+  <!-- COMMENT PANEL -->
+  <button id="comment-btn">💬 LEAVE A COMMENT</button>
+
+  <div id="comment-panel">
+    <div class="chat-header">
+      <div class="chat-header-left">
+        <span class="chat-header-icon">💬</span>
+        <div>
+          <div class="chat-header-title">LEAVE A COMMENT</div>
+          <div class="chat-header-sub">Feedback, thoughts, or a message for William</div>
+        </div>
+      </div>
+      <button id="comment-close">✕</button>
+    </div>
+    <div class="comment-body">
+      <input type="text" id="comment-name" placeholder="Name (optional)" autocomplete="off" />
+      <textarea id="comment-text" placeholder="Your comment..." rows="4"></textarea>
+      <div class="comment-footer">
+        <label class="private-toggle">
+          <input type="checkbox" id="comment-private" />
+          <span>Mark as private</span>
+        </label>
+        <button id="comment-submit">SUBMIT</button>
+      </div>
+      <div id="comment-status"></div>
     </div>
   </div>
 
